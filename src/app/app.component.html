@@ -1,20 +1,57 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+  <!-- binding -->
+  <h1 [textContent]="title"></h1>
+  <!-- Interpolation -->
+  <h1>Welcome to {{ title }}!</h1>
+
+  <!-- Interpolation -->
+  <img width="300" alt="Angular Logo" src="{{imageUrl}}"/>
+  <!-- Binding -->
+  <img width="300" alt="Angular Logo" [src]="imageUrl"/>
 </div>
+
 <h2>Here are some links to help you start: </h2>
+
 <ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+  <li *ngFor="let sth of courses">{{sth}}</li>
 </ul>
+
+<!-- two-way data binding -->
+<input type="text" [(ngModel)]="inputValue" (keyup)="twoWay()">
+<p>{{inputValue | uppercase | lowercase}}</p>
+
+<!-- Pipes -->
+<p >{{inputValue | number}}</p>
+
+<!-- Custom pipe -->
+<p>{{text | truncate:30}}</p>
+
+<!-- //Bootstrap -->
+<!-- CLASS BINDING is done by [class.class_name]="property" -->
+<!-- STYLE BINDING DOM style properties are bound as [style.backgroundColor]="isActive ? grey : white" -->
+<!-- EVENT BINDING is done as (event)="expression()" -->
+<div (click)="divClicked()">
+
+<button [class.active]="isActive"
+ class="btn btn-primary" 
+ (click)="onSave($event)"
+ [style.backgroundColor]="isActive ? 'grey' : 'white'"
+ >Save</button>
+</div>
+
+<!-- We can either filter what button was clicked in function or we can use (keyup.enter)="onKeyup()" -->
+<input (keyup)="onKeyup($event)" />
+
+<!-- we can also not use in function event.target.value to get value of input , but declare in input a TEMPLATE VARIABLE that references this input with '#' in front  -->
+<input #email (keyup.enter)="onEmail(email.value)" />
+
+<table>
+  <tr>
+    <!-- Colspan is HTML attribute that doesnt have representation in DOM as a DOM property so we have to use  [attr.name]-->
+    <td [attr.colspan]="colspan"></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
 
