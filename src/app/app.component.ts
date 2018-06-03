@@ -33,7 +33,7 @@ export class AppComponent {
   }
   
   imageUrl = 'https://images.pexels.com/photos/251225/pexels-photo-251225.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-  title = 'Maximka smoget';
+  title = 'Welcome to my casdasd ';
 
   colspan = 2;
    
