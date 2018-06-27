@@ -1,57 +1,62 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<!-- <div style="text-align:center"> -->
   <!-- binding -->
-  <h1 [textContent]="title"></h1>
+  <!-- <h1 [textContent]="title"></h1> -->
   <!-- Interpolation -->
-  <h1>Welcome to {{ title }}!</h1>
+  <!-- <h1>Welcome to {{ title }}!</h1> -->
 
   <!-- Interpolation -->
-  <img width="300" alt="Angular Logo" src="{{imageUrl}}"/>
+  <!-- <img width="300" alt="Angular Logo" src="{{imageUrl}}"/> -->
   <!-- Binding -->
-  <img width="300" alt="Angular Logo" [src]="imageUrl"/>
-</div>
+  <!-- <img width="300" alt="Angular Logo" [src]="imageUrl"/> -->
+<!-- </div> -->
 
-<h2>Here are some links to help you start: </h2>
+<!-- <h2>Here are some links to help you start: </h2> -->
 
-<ul>
+<!-- <ul>
   <li *ngFor="let sth of courses">{{sth}}</li>
-</ul>
+</ul> -->
 
 <!-- two-way data binding -->
-<input type="text" [(ngModel)]="inputValue" (keyup)="twoWay()">
-<p>{{inputValue | uppercase | lowercase}}</p>
+<!-- <input type="text" [(ngModel)]="inputValue" (keyup)="twoWay()">
+<p>{{inputValue | uppercase | lowercase}}</p> -->
 
 <!-- Pipes -->
-<p >{{inputValue | number}}</p>
+<!-- <p >{{inputValue | number}}</p> -->
 
 <!-- Custom pipe -->
-<p>{{text | truncate:30}}</p>
+<!-- <p>{{text | truncate:30}}</p> -->
 
 <!-- //Bootstrap -->
 <!-- CLASS BINDING is done by [class.class_name]="property" -->
 <!-- STYLE BINDING DOM style properties are bound as [style.backgroundColor]="isActive ? grey : white" -->
 <!-- EVENT BINDING is done as (event)="expression()" -->
-<div (click)="divClicked()">
+<!-- <div (click)="divClicked()">
 
 <button [class.active]="isActive"
  class="btn btn-primary" 
  (click)="onSave($event)"
  [style.backgroundColor]="isActive ? 'grey' : 'white'"
  >Save</button>
-</div>
+</div> -->
 
 <!-- We can either filter what button was clicked in function or we can use (keyup.enter)="onKeyup()" -->
-<input (keyup)="onKeyup($event)" />
+<!-- <input (keyup)="onKeyup($event)" /> -->
 
 <!-- we can also not use in function event.target.value to get value of input , but declare in input a TEMPLATE VARIABLE that references this input with '#' in front  -->
-<input #email (keyup.enter)="onEmail(email.value)" />
+<!-- <input #email (keyup.enter)="onEmail(email.value)" /> -->
 
-<table>
-  <tr>
+<!-- <table> -->
+  <!-- <tr> -->
     <!-- Colspan is HTML attribute that doesnt have representation in DOM as a DOM property so we have to use  [attr.name]-->
-    <td [attr.colspan]="colspan"></td>
+    <!-- <td [attr.colspan]="colspan"></td>
     <td></td>
     <td></td>
   </tr>
-</table>
+</table> -->
+
+
+
+<!-- <app-devices (displaying)="displayDeviceInConsole($event)"></app-devices> -->
+<app-main-page></app-main-page>
 
