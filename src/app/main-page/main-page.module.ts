@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DevicesComponent } from './devices/devices.component';
 import { DeviceComponent } from './devices/device/device.component';
+import { DeviceRelativeDirective } from './devices/device-relative/device-relative.directive';
+import { StructuralDirectiveDirective } from './devices/structural-directive/structural-directive.directive';
 
 @NgModule({
     imports: [
@@ -14,7 +16,9 @@ import { DeviceComponent } from './devices/device/device.component';
     declarations: [
         MainPageComponent,
         DevicesComponent,
-        DeviceComponent
+        DeviceComponent,
+        DeviceRelativeDirective,
+        StructuralDirectiveDirective
     ],
     providers: [
         DevicesService

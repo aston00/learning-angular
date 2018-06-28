@@ -24,7 +24,7 @@ export class DevicesService {
     };
 
     removeDevice(deviceIdentificator) {
-        this.devices = this.devices.filter((device, index) => index !== deviceIdentificator);
+        this.devices.splice(deviceIdentificator, 1);
         return this.devices;
     };
 };
