@@ -7,6 +7,7 @@ import { DevicesComponent } from './devices/devices.component';
 import { DeviceComponent } from './devices/device/device.component';
 import { DeviceRelativeDirective } from './devices/device-relative/device-relative.directive';
 import { StructuralDirectiveDirective } from './devices/structural-directive/structural-directive.directive';
+import { HtppServiceService } from './http-service/htpp-service.service';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import { StructuralDirectiveDirective } from './devices/structural-directive/str
         StructuralDirectiveDirective
     ],
     providers: [
-        DevicesService
+        DevicesService,
+        HtppServiceService
     ],
     //Exports is necessary when we pass this module into another and we need to export root components of this module, so we can use it in the template of the upper module 
     exports: [
